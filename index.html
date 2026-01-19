@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Quiz Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Welcome Screen -->
+        <div id="welcomeScreen" class="screen active">
+            <div class="welcome-content">
+                <h1>Quiz Game</h1>
+                <p class="subtitle">Test your knowledge with our interactive quiz</p>
+                <button class="btn btn-primary" onclick="startQuiz()">Start Quiz</button>
+            </div>
+        </div>
+
+        <!-- Quiz Screen -->
+        <div id="quizScreen" class="screen">
+            <div class="quiz-header">
+                <div class="quiz-progress">
+                    <span id="questionNumber">Question 1 of 5</span>
+                    <div class="progress-bar">
+                        <div id="progressFill" class="progress-fill"></div>
+                    </div>
+                </div>
+                <div class="quiz-timer">
+                    <div class="timer-label">Time Remaining</div>
+                    <span id="timer">--:--</span>
+                </div>
+            </div>
+
+            <div class="quiz-content">
+                <h2 id="questionText" class="question-text"></h2>
+
+                <!-- Question Container -->
+                <div id="questionContainer" class="question-container">
+                    <!-- Content will be dynamically generated -->
+                </div>
+
+                <!-- Navigation Buttons -->
+                <div class="quiz-buttons">
+                    <button id="prevBtn" class="btn btn-secondary" onclick="previousQuestion()" disabled>Previous</button>
+                    <button id="nextBtn" class="btn btn-primary" onclick="nextQuestion()">Next</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Results Screen -->
+        <div id="resultsScreen" class="screen">
+            <div class="results-content">
+                <h1>Quiz Complete!</h1>
+                <div class="score-display">
+                    <div class="score-circle">
+                        <span id="finalScore">0</span>
+                        <span class="score-label">/ 100</span>
+                    </div>
+                </div>
+                <p id="scoreMessage" class="score-message"></p>
+                
+                <div class="results-details">
+                    <h3>Your Performance</h3>
+                    <div id="resultsDetail" class="results-detail"></div>
+                </div>
+
+                <div class="results-buttons">
+                    <button class="btn btn-secondary" onclick="retakeQuiz()">Retake Quiz</button>
+                    <button class="btn btn-primary" onclick="restartQuiz()">Back to Home</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="quiz-data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
